@@ -1,1 +1,22 @@
+class Voiture:
+    # Le constructeur __init__ initialise les attributs
+    def __init__(self, marque, modele, annee):
+        self.marque = marque  # Attribut d'instance
+        self.modele = modele
+        self.annee = annee
+        self.est_demarree = False # Attribut avec valeur par défaut
 
+    # Une méthode (fonction) qui agit sur l'objet
+    def demarrer(self):
+        if not self.est_demarree:
+            print(f"La {self.marque} {self.modele} démarre.")
+            self.est_demarree = True
+        else:
+            print("La voiture est déjà démarrée.")
+
+    def arreter(self):
+        if self.est_demarree:
+            print(f"La {self.marque} {self.modele} s'arrête.")
+            self.est_demarree = False
+        else:
+            print("La voiture est déjà arrêtée.")
